@@ -2,6 +2,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
 	<script>
 		// TODO: create a handler
 		function setSearchEngine() {
@@ -13,21 +14,30 @@
 			};
 			
 			const checkedSearchEngine = document.querySelector('input[name=engine]:checked');
+			const inputTextElement = document.querySelector('input[name=q]');
+
+			//validations need to be here
+			if (inputTextElement.value === '' || checkedSearchEngine === null) {
+				//this isn't valid
+				alert('Provide both search text and search engine!');
+				event.preventDefault();
+				return;
+			}
 			// console.log(checkedSearchEngine.value);
 			const actionUrl = actions[checkedSearchEngine.value];
 			// console.log(actionUrl);
-			const formElement = document.getElementById('submit');
+			const formElement = document.getElementById('searchForm');
 			formElement.setAttribute('action', actionUrl);
 
 
 
 			// event.preventDefault();
-			// console.log("Hello World!")
+			// console.log("I like pizza!")
 		}
     	window.addEventListener("load", function(){
         // TODO: register the handler
-			const mySubmitBtnElement = document.getElementById("submit");
-			mySubmitBtnElement.addEventListener('click', setSearchEngine)
+			const mySubmitBtnElement = document.getElementById('submit');
+			mySubmitBtnElement.addEventListener('click', setSearchEngine);
     });
 	</script>
 </head>

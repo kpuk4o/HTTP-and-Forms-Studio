@@ -1,0 +1,17 @@
+body {
+    background-color: blanchedalmond;
+}
+
+label {
+    font-size: 21px;
+    padding: 5px;
+}
+
+#searchForm{
+    border-width: 2px;
+    border-color:cornflowerblue;
+    border-style: solid;
+    padding: 10px;
+    margin-top: 150px;
+    border-radius: 11px; 
+}
